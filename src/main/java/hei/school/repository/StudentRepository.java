@@ -8,7 +8,7 @@ import java.util.List;
 public class StudentRepository {
     private final Connection connection = DataSource.getConnection();
 
-    // INSERT
+
     public void insert(Student student) {
         String sql = "INSERT INTO student (id, name, age) VALUES (?, ?, ?)";
 
@@ -23,7 +23,7 @@ public class StudentRepository {
         }
     }
 
-    // SELECT ALL
+
     public List<Student> findAll() {
         String sql = "SELECT id, name, age FROM student";
         List<Student> list = new ArrayList<>();
@@ -45,7 +45,7 @@ public class StudentRepository {
         return list;
     }
 
-    // UPDATE
+
     public void updateName(int id, String newName) {
         String sql = "UPDATE student SET name = ? WHERE id = ?";
 
@@ -59,7 +59,7 @@ public class StudentRepository {
         }
     }
 
-    // DELETE
+
     public void delete(int id) {
         String sql = "DELETE FROM student WHERE id = ?";
 
